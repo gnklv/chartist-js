@@ -182,7 +182,8 @@
         pathData.push({
           value: value,
           valueIndex: valueIndex,
-          meta: Chartist.getMetaData(series, valueIndex)
+          meta: Chartist.getMetaData(series, valueIndex),
+          date: Chartist.getDate(series, valueIndex)
         });
       }.bind(this));
 
@@ -213,7 +214,8 @@
             y2: pathElement.y
           }, options.classNames.point).attr({
             'ct:value': [pathElement.data.value.x, pathElement.data.value.y].filter(Chartist.isNumeric).join(','),
-            'ct:meta': Chartist.serialize(pathElement.data.meta)
+            'ct:meta': Chartist.serialize(pathElement.data.meta),
+            'ct:date': Chartist.serialize(pathElement.data.date)
           });
 
           this.eventEmitter.emit('draw', {
