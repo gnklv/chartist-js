@@ -509,6 +509,11 @@ var Chartist = {
     return value ? value.date : undefined;
   };
 
+  Chartist.getIndex = function(series, index) {
+    var value = series.data ? series.data[index] : series[index];
+    return value ? value.index : undefined;
+  };
+
   /**
    * Calculate the order of magnitude for the chart scale
    *
