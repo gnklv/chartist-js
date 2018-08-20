@@ -215,9 +215,9 @@
             y2: pathElement.y
           }, options.classNames.point).attr({
             'ct:value': [pathElement.data.value.x, pathElement.data.value.y].filter(Chartist.isNumeric).join(','),
-            'ct:meta': Chartist.serialize(pathElement.data.meta),
-            'ct:date': Chartist.serialize(pathElement.data.date),
-            'ct:index': Chartist.serialize(pathElement.data.index)
+            'data-meta': Chartist.serialize(pathElement.data.meta),
+            'data-date': Chartist.serialize(pathElement.data.date),
+            'data-index': Chartist.serialize(pathElement.data.index)
           });
 
           this.eventEmitter.emit('draw', {
