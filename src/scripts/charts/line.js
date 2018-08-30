@@ -170,6 +170,8 @@
         (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex))
       ].join(' '));
 
+      if (options.animIndex >= 0 && seriesIndex === options.animIndex) seriesElement.addClass('animated');
+
       var pathCoordinates = [],
         pathData = [];
 
